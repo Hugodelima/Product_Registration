@@ -1,0 +1,19 @@
+
+*{
+  margin:0;
+  padding: 0;
+}
+
+
+.tabela_borda th {
+  border: 1px solid black;
+}
+.tabela_borda td {
+  border: 1px solid black; 
+}
+
+
+
+.linha {
+  border: 2px solid black;
+}
