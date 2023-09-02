@@ -47,7 +47,7 @@ class Produto {
 			const arrayTotaldaNfe = []
 			for (let i = 0; i < this.arrayProdutos.length; i++) {
                 const valorTotalString = this.arrayProdutos[i].quantidade * this.arrayProdutos[i].preco;
-                arrayTotaldaNfe.push(parseFloat(valorTotalString)); // Convert to float and push to the array
+                arrayTotaldaNfe.push(parseFloat(valorTotalString)); 
             }
 			let soma = 0;
 
@@ -55,15 +55,21 @@ class Produto {
                 soma += arrayTotaldaNfe[i];
             }
             resultado.innerHTML = `Total da NF-e R$${soma}`
+            tabela.style.display = 'table';
+            tabelaNome.style.display = 'block';
             
 			
 			
 			
 			// <hr> para aparecer as linhas
-            // Adicione uma linha horizontal após cada linha de produto
             let tr_hr = tbody.insertRow();
             tr_hr.classList.add("linha");
-			
+
+            document.getElementById('produto').value = '';
+            document.getElementById('quantidade').value = '';
+            document.getElementById('preco').value = '';
+
+            
             
         }
     }
@@ -111,6 +117,8 @@ class Produto {
 const produto = new Produto();
 
 const cadastrarButton = document.getElementById('cadastrarButton');
+
+
 
 
 cadastrarButton.addEventListener('click', function() {

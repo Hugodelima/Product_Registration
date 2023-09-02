@@ -17,3 +17,14 @@
 .linha {
   border: 2px solid black;
 }
+
+
+.textoResultado{
+  font-size: 24px;
+}
+@media (max-width: 990px) {
+  .textoResultado {
+
+    font-size: 18px; 
+  }
+}
