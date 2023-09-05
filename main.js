@@ -37,12 +37,11 @@ class Produto {
             td_id.innerText = this.arrayProdutos[i].id;
             td_produto.innerText = this.arrayProdutos[i].nomeProduto;
             td_quantidade.innerText = this.arrayProdutos[i].quantidade;
-            td_preco.innerText = `R$ ${this.arrayProdutos[i].preco}`;
-            td_valorTotal.innerText = `R$${this.arrayProdutos[i].quantidade * this.arrayProdutos[i].preco}`;
+            td_preco.innerText = `R$ ${parseFloat(this.arrayProdutos[i].preco).toLocaleString('pt-BR')}`;
+            td_valorTotal.innerText = `R$${parseFloat(this.arrayProdutos[i].quantidade * this.arrayProdutos[i].preco).toLocaleString('pt-BR')}`;
 
-            td_id.classList.add("text-center")
             
-			
+        
 			
 			const arrayTotaldaNfe = []
 			for (let i = 0; i < this.arrayProdutos.length; i++) {
@@ -54,22 +53,15 @@ class Produto {
             for (let i = 0; i < arrayTotaldaNfe.length; i++) {
                 soma += arrayTotaldaNfe[i];
             }
-            resultado.innerHTML = `Total da NF-e R$${soma}`
+            
+			
+
+            resultado.innerHTML = `Total da NF-e: R$${(soma).toLocaleString('pt-br')}`
             tabela.style.display = 'table';
             tabelaNome.style.display = 'block';
             
 			
-			
-			
-			// <hr> para aparecer as linhas
-            let tr_hr = tbody.insertRow();
-            tr_hr.classList.add("linha");
 
-            document.getElementById('produto').value = '';
-            document.getElementById('quantidade').value = '';
-            document.getElementById('preco').value = '';
-
-            
             
         }
     }
@@ -111,6 +103,8 @@ class Produto {
     }
     
     
+    
+    
 
 }
 
@@ -123,4 +117,7 @@ const cadastrarButton = document.getElementById('cadastrarButton');
 
 cadastrarButton.addEventListener('click', function() {
     produto.salvar();
+    document.getElementById('produto').value = '';
+    document.getElementById('quantidade').value = '';
+    document.getElementById('preco').value = '';
 });

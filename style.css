@@ -4,13 +4,36 @@
   padding: 0;
 }
 
+body{
+  background-color: #181a1b;
+}
+.titulo,label{
+  color: #d1cdc7;
+}
 
+.form-control{
+  background-color: #181a1b;
+  color: white;
+}
+
+form{
+  background-color: #181a1b;
+  border-radius: 3rem;
+  box-shadow: 5px 5px 5px red;
+  border: 2px solid red;
+  padding: 2rem;
+
+}
+.tabela_borda{
+  border: 2px solid red;
+}
 .tabela_borda th {
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
 }
 .tabela_borda td {
-  border: 1px solid black; 
+  border: 1px solid rgb(255, 255, 255); 
 }
+
 
 
 
@@ -18,7 +41,9 @@
   border: 2px solid black;
 }
 
-
+tbody{
+  color: white;
+}
 .textoResultado{
   font-size: 24px;
 }
@@ -27,4 +52,5 @@
 
     font-size: 18px; 
   }
+ 
 }
