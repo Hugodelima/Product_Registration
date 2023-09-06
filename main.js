@@ -59,6 +59,8 @@ class Produto {
             resultado.innerHTML = `Total da NF-e: R$${(soma).toLocaleString('pt-br')}`
             tabela.style.display = 'table';
             tabelaNome.style.display = 'block';
+
+            this.limpaCampo();
             
 			
 
@@ -101,6 +103,13 @@ class Produto {
         
         return true;
     }
+    limpaCampo(){
+        document.getElementById('produto').value = '';
+        document.getElementById('quantidade').value = '';
+        document.getElementById('preco').value = '';
+
+    }
+
     
     
     
@@ -117,7 +126,5 @@ const cadastrarButton = document.getElementById('cadastrarButton');
 
 cadastrarButton.addEventListener('click', function() {
     produto.salvar();
-    document.getElementById('produto').value = '';
-    document.getElementById('quantidade').value = '';
-    document.getElementById('preco').value = '';
+    
 });
