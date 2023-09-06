@@ -90,11 +90,11 @@ class Produto {
         if(produto.nomeProduto == ""){
             msg += "Informe o nome do produto \n"
         }
-        if(produto.quantidade == ""){
-            msg += "Informe a quantidade do produto \n"
+    if(produto.quantidade == "" || produto.quantidade <= "0"){
+            msg += "Informe a quantidade do produto maior que zero\n"
         }
-        if(produto.preco == ""){
-            msg += "Informe o preco do produto \n"
+        if(produto.preco == ""|| produto.preco <= "0"){
+            msg += "Informe o preco do produto maior que zero\n"
         }
         if(msg != ""){
             alert(msg)
